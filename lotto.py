@@ -16,7 +16,7 @@ def distinct_random_numbers(min, max, size):
     if creating "size" distinct random numbers is impossible, return empty array
     requirement: to use the above function "exists" and one while-loop
     """
-    result = []
+    result = [] #empty list being returned for weong input
     if size > 0 and max - min + 1 >= size:
         i = 0
         while i < size:
