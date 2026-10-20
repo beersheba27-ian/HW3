@@ -1,10 +1,9 @@
-import random
-def create_random_list(min, max, size):
-    res = []
-    for i in range(size):
-        res.append(random.randint(min, max))
-    return res    
-print(create_random_list(1, 100, 5))
+l1 = [x for x in range(10)]
+print (l1)
+lEven = [x for x in range(10) if x % 2 == 0]
+print (lEven)
+lEvenStr = [str(x) for x in range(10) if x % 2 == 0]
+print (lEvenStr)
 
 
   
