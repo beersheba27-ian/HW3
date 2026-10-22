@@ -19,7 +19,7 @@ def lastIndexOf(numbers: list[int], num: int) -> int:
         if numbers[i] == num: return i
     return -1
 
-def min_even (numbers):
+def min_even (numbers: list[int]) -> int:
     """
     "numbers" - list with int numbers
     returns minimal even number
@@ -27,7 +27,13 @@ def min_even (numbers):
     no need to check that assumption (usually the assumptions are never checked ) 
     example: min_even (-10001, 10, 20, 8, -7) => 8
     """ 
-    #TODO
+    numbers.sort()
+    # 2 returns for early stop
+    # I wanted to make it with filter by lambda function, but we didn't study it yet
+    for x in numbers:
+        if x % 2 == 0: return x
+    return -1
+
 def count(numbers, num) :
     """
     "numbers" - list with int numbers; "num" - int
