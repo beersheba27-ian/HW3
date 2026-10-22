@@ -44,7 +44,7 @@ def count(numbers: list[int], num: int) -> int:
     # I wanted to make it with numbers.count(num), but we didn't study it yet
     return len([x for x in numbers if x == num])
 
-def sumOfTwoExists(numbers, sum):
+def sumOfTwoExists(numbers: list[int], sum: int) -> bool:
     """
     Optional task for advanced students
     To apply only the types discussed at the course up to now
@@ -53,7 +53,12 @@ def sumOfTwoExists(numbers, sum):
     Examples: sumOfTwoExists([1, -1, 40, 50, 0], 0) => True;
     sumOfTwoExists([1, -1, 40, 50, 0], 42) => False
     """ 
-    #TODO
+    for i in range(len(numbers)-1):
+        x = numbers[i]
+        for y in numbers[i+1::]:
+            # 2 returns for early stop
+            if x + y == sum: return True
+    return False
 
 
 # print calls for testing the above functions
