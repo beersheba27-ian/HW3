@@ -4,17 +4,8 @@ def int_reverse(num):
     if "num" contains only one digit it will return the same digit but as a string
     examples: int_reverse(10) -> "01"; int_reverse(1) -> "1";int_reverse(702) -> "207"
     """
-    result = ""
-    sign = ""
-    if num < 0: 
-        num = -num
-        sign = "-"
-    while num >= 10:
-        digit = num % 10
-        num = num // 10
-        result += str(digit)
-    result += str(num) + sign
-    return result    
+    
+    return str(num)[::-1]   
 
 
 def create_palindromic_list(start, stop) :
@@ -24,12 +15,8 @@ def create_palindromic_list(start, stop) :
     note: "start" may be less than "stop"
     requirement: to use "int_reverse" function
     """  
-    step = 1
-    result = []
-    if start > stop: step = -1
-    for num in range(start, stop + step, step):
-        if str(num) == int_reverse(num):
-            result.append(num)
+    step = -1 if start > stop else 1
+    result = [num for num in range(start, stop + step, step) if str(num) == int_reverse(num)]
     return result        
 
 
