@@ -62,3 +62,46 @@ def sumOfTwoExists(numbers: list[int], sum: int) -> bool:
 
 
 # print calls for testing the above functions
+
+# I know that we didn't learn assert(), 
+# but I found it better to use than just print output and check manually
+
+assert indexOf([10, 20, 30, 20, -1], 20) == 1
+assert indexOf([10, 20, 30, 20, -1], 10) == 0
+assert indexOf([10, 20, 30, 20, -1], -1) == 4
+assert indexOf([20, 10, 20, 30, 20, -1], 20) == 0
+assert indexOf([20, 10, 20, 30, 20, -1, 20], 20) == 0
+assert indexOf([10, 20, 30], 99) == -1
+assert indexOf([], 10) == -1
+
+assert lastIndexOf([10, 20, 30, 20, -1], 20) == 3
+assert lastIndexOf([10, 20, 30, 20, -1], 10) == 0
+assert lastIndexOf([10, 20, 30, 20, -1], -1) == 4
+assert lastIndexOf([20, 10, 20, 30, 20, -1], 20) == 4
+assert lastIndexOf([20, 10, 20, 30, 20, -1, 20], 20) == 6
+assert lastIndexOf([10, 20, 30], 99) == -1
+assert lastIndexOf([], 10) == -1
+
+assert min_even([9, 4, 7, 2]) == 2
+assert min_even([-8, -3, -4, 5]) == -8
+assert min_even([5, 0, 3, 2]) == 0
+assert min_even([6]) == 6
+
+assert count([10, 20, 30, 20, -1], 20) == 2
+assert count([10, 20, 30, 20, -1], 30) == 1
+assert count([10, 20, 30, 20, -1], 10) == 1
+assert count([10, 20, 30, 20, -1], -1) == 1
+assert count([1, 2, 3], 4) == 0
+assert count([5, 5, 5], 5) == 3
+assert count([], 5) == 0
+
+assert sumOfTwoExists([1, -1, 40, 50, 0], 0) is True
+assert sumOfTwoExists([1, -1, 40, 50, 0], 39) is True
+assert sumOfTwoExists([1, -1, 40, 50, 0], 41) is True
+assert sumOfTwoExists([1, -1, 40, 50, 0], 50) is True
+assert sumOfTwoExists([1, -1, 40, 50, 0], 2) is False
+assert sumOfTwoExists([1, 2, 3], 5) is True
+assert sumOfTwoExists([3, 3], 6) is True
+assert sumOfTwoExists([1], 2) is False
+
+print("All tests passed!")
