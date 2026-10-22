@@ -34,14 +34,16 @@ def min_even (numbers: list[int]) -> int:
         if x % 2 == 0: return x
     return -1
 
-def count(numbers, num) :
+def count(numbers: list[int], num: int) -> int:
     """
     "numbers" - list with int numbers; "num" - int
     returns count of "num" occurrences in "numbers".
       Examples: count([10, 20, 30, 20, -1],20) => 2,
     count([10, 20, 30, 20, -1],23) => 0
     """
-    #TODO
+    # I wanted to make it with numbers.count(num), but we didn't study it yet
+    return len([x for x in numbers if x == num])
+
 def sumOfTwoExists(numbers, sum):
     """
     Optional task for advanced students
