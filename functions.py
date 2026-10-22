@@ -1,19 +1,24 @@
-def indexOf(numbers, num):
+def indexOf(numbers: list[int], num: int) -> int:
     """
         "numbers" - list with int numbers; "num" - int
         if "num" exists in "numbers", returns index of its first occurrence,
         otherwise -1. Examples: indexOf([10, 20, 30, 20, -1],20) => 1,
         indexOf([10, 20, 30, 20, -1],23) => -1
     """
-    #TODO
-def lastIndexOf(numbers, num):
+    return -1 if num not in numbers else numbers.index(num)
+
+def lastIndexOf(numbers: list[int], num: int) -> int:
     """
         "numbers" - list with int numbers; "num" - int
         if "num" exists in "numbers", returns index of its last occurrence,
         otherwise -1. Examples: lastIndexOf([10, 20, 30, 20, -1],20) => 3,
         lastIndexOf([10, 20, 30, 20, -1],23) => -1
     """
-    #TODO 
+    # 2 returns for early stop
+    for i in range(len(numbers) - 1, -1, -1):
+        if numbers[i] == num: return i
+    return -1
+
 def min_even (numbers):
     """
     "numbers" - list with int numbers
