@@ -60,10 +60,8 @@ def sumOfTwoExists(numbers: list[int], sum: int) -> bool:
     sumOfTwoExists([1, -1, 40, 50, 0], 42) => False
     """ 
     for i in range(len(numbers)-1):
-        x = numbers[i]
-        for y in numbers[i+1::]:
-            # 2 returns for early stop
-            if x + y == sum: return True
+        for j in range(i+1, len(numbers)):
+            if numbers[i] + numbers[j] == sum: return True
     return False
 
 
