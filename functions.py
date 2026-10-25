@@ -45,8 +45,10 @@ def count(numbers: list[int], num: int) -> int:
       Examples: count([10, 20, 30, 20, -1],20) => 2,
     count([10, 20, 30, 20, -1],23) => 0
     """
-    # I wanted to make it with numbers.count(num), but we didn't study it yet
-    return len([x for x in numbers if x == num])
+    cnt = 0
+    for x in numbers:
+        if x == num: cnt += 1
+    return cnt
 
 def sumOfTwoExists(numbers: list[int], sum: int) -> bool:
     """
