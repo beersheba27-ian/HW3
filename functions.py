@@ -32,12 +32,11 @@ def min_even (numbers: list[int]) -> int:
     no need to check that assumption (usually the assumptions are never checked ) 
     example: min_even (-10001, 10, 20, 8, -7) => 8
     """ 
-    numbers.sort()
-    # 2 returns for early stop
-    # I wanted to make it with filter by lambda function, but we didn't study it yet
+    cur = None
     for x in numbers:
-        if x % 2 == 0: return x
-    return -1
+        if x % 2 == 0 and (cur is None or x < cur):
+            cur = x
+    return cur if cur is not None else -1
 
 def count(numbers: list[int], num: int) -> int:
     """
