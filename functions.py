@@ -5,7 +5,11 @@ def indexOf(numbers: list[int], num: int) -> int:
         otherwise -1. Examples: indexOf([10, 20, 30, 20, -1],20) => 1,
         indexOf([10, 20, 30, 20, -1],23) => -1
     """
-    return -1 if num not in numbers else numbers.index(num)
+    i = 0
+    while i in range(0, len(numbers)):
+        if numbers[i] == num: return i
+        i += 1
+    return -1
 
 def lastIndexOf(numbers: list[int], num: int) -> int:
     """
