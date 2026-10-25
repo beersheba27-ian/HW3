@@ -6,7 +6,7 @@ def indexOf(numbers: list[int], num: int) -> int:
         indexOf([10, 20, 30, 20, -1],23) => -1
     """
     i = 0
-    while i in range(0, len(numbers)):
+    while i < len(numbers):
         if numbers[i] == num: return i
         i += 1
     return -1
@@ -18,9 +18,10 @@ def lastIndexOf(numbers: list[int], num: int) -> int:
         otherwise -1. Examples: lastIndexOf([10, 20, 30, 20, -1],20) => 3,
         lastIndexOf([10, 20, 30, 20, -1],23) => -1
     """
-    # 2 returns for early stop
-    for i in range(len(numbers) - 1, -1, -1):
+    i = len(numbers) - 1
+    while i >= 0:
         if numbers[i] == num: return i
+        i -= 1
     return -1
 
 def min_even (numbers: list[int]) -> int:
