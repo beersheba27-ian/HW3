@@ -6,10 +6,12 @@ def indexOf(numbers: list[int], num: int) -> int:
         indexOf([10, 20, 30, 20, -1],23) => -1
     """
     i = 0
-    while i < len(numbers):
-        if numbers[i] == num: return i
+    foundIndex = -1
+    while i < len(numbers) and foundIndex == -1:
+        if numbers[i] == num: 
+            foundIndex = i
         i += 1
-    return -1
+    return foundIndex
 
 def lastIndexOf(numbers: list[int], num: int) -> int:
     """
@@ -19,10 +21,12 @@ def lastIndexOf(numbers: list[int], num: int) -> int:
         lastIndexOf([10, 20, 30, 20, -1],23) => -1
     """
     i = len(numbers) - 1
-    while i >= 0:
-        if numbers[i] == num: return i
+    foundIndex = -1
+    while i >= 0 and foundIndex == -1:
+        if numbers[i] == num: 
+            foundIndex = i
         i -= 1
-    return -1
+    return foundIndex
 
 def min_even (numbers: list[int]) -> int:
     """
@@ -59,7 +63,13 @@ def sumOfTwoExists(numbers: list[int], sum: int) -> bool:
     Examples: sumOfTwoExists([1, -1, 40, 50, 0], 0) => True;
     sumOfTwoExists([1, -1, 40, 50, 0], 42) => False
     """ 
-    for i in range(len(numbers)-1):
-        for j in range(i+1, len(numbers)):
-            if numbers[i] + numbers[j] == sum: return True
-    return False
+    isExist = False
+    i = 0
+    while i < len(numbers)-1 and not isExist:
+        j = i+1
+        while j < len(numbers) and not isExist:
+            if numbers[i] + numbers[j] == sum: 
+                isExist = True
+            j += 1
+        i += 1
+    return isExist
