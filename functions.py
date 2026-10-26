@@ -66,10 +66,15 @@ def sumOfTwoExists(numbers: list[int], sum: int) -> bool:
     isExist = False
     i = 0
     while i < len(numbers)-1 and not isExist:
-        j = i+1
-        while j < len(numbers) and not isExist:
-            if numbers[i] + numbers[j] == sum: 
-                isExist = True
-            j += 1
+        isExist = _isSumExistInNextNumbers(numbers, sum, i)
         i += 1
+    return isExist
+
+def _isSumExistInNextNumbers(numbers: list[int], sum: int, currentIndex: int) -> bool:
+    nextIndex = currentIndex + 1
+    isExist = False
+    while nextIndex < len(numbers) and not isExist:
+        if numbers[currentIndex] + numbers[nextIndex] == sum: 
+            isExist = True
+        nextIndex += 1
     return isExist
